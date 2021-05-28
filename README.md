@@ -64,8 +64,8 @@ Analyze compensation data for over 300,000 employees:
  <table style="width:100%">
   <tr valign="top">
     <th><img height="200" alt="Average Daily Rainfall" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/average_rainfall.png"></th>
-    <th><img height="200" alt="Average Salaries by Position" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/temps_during_trip_date_range.png"></th>
-    <th><img height="200" alt="Average Historical Temperatures During Trip Dates" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/temps_during_trip_date_range.png"></th>
+    <th><img height="200" alt="Average Temperature Histogram" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/temp_obs_histogram.png"></th>
+    <th><img height="200" alt="Average Historical Temperatures During Trip Dates" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/average_trip_temperature.png"></th>
        <th><img height="200" alt="Average Historical Temperatures During Trip Dates" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/temps_during_trip_date_range.png"></th>
   </tr>
 </table> 
