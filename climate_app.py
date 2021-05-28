@@ -1,7 +1,4 @@
-import numpy as np
-import os
-
-import sqlalchemy
+# Import dependencies
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
@@ -77,14 +74,30 @@ def stations():
     session = Session(engine)
 
     """Return a JSON list of stations from the dataset."""
-    # Query all stations
-    results = session.query(Stations.station).all()
+    
+    # Query all stations and get their info
 
+    results = session.query(Stations.id, Measurements.station, Stations.latitude, 
+        Stations.longitude, Stations.elevation, func.count(Measurements.station)).\
+        filter(Measurements.station == Stations.station).\
+        group_by(Measurements.station).\
+        order_by(func.count(Measurements.station).desc()).all()
+    
     session.close()
 
-    # Create a JSON list of stations
-    stations = list(np.ravel(results))
+    # Create a JSON list of stations. NOTE that I make it a list of dictionaries so that
+    # it's clear what the data represents by giving in key labels.
 
+    stations = []
+    for station in results:
+        station_dict={}
+        station_dict['Station ID'] = station[0]
+        station_dict['Station Name'] = station[1]
+        station_dict['Station Lat'] = station[2]
+        station_dict['Station Long'] = station[3]
+        station_dict['Station Elev'] = station[4]
+        station_dict['Station Total Meas)'] = station[5]
+        stations.append(station_dict)
     return jsonify(stations)
 
 
@@ -120,8 +133,7 @@ def tobs():
         filter(Measurements.station == Stations.station).\
         filter(Stations.id == most_active_station.id).\
         filter(Measurements.date <= most_recent_date.date, 
-           Measurements.date > one_year_before_most_recent.strftime("%Y-%m-%d")).all() 
-    
+        Measurements.date > one_year_before_most_recent.strftime("%Y-%m-%d")).all() 
     
     session.close()
 
@@ -134,11 +146,8 @@ def temps_start(start):
     # Create our session (link) from Python to the DB
     session = Session(engine)
 
-    """ 1. Return a JSON list of the minimum temperature, the average temperature, 
-        and the max temperature for a given start or start-end range. 
-        
-        2. When given the start only, calculate TMIN, TAVG, and TMAX for all dates 
-        greater than and equal to the start date."""
+    """ Return a JSON list of the minimum temperature, the average temperature, 
+        and the max temperature for a given start date."""
  
    # Query most active station
     most_active_station = session.query(Stations.id, Stations.station).\
@@ -162,7 +171,8 @@ def temps_start(start):
     
     session.close()
 
-    # Convert data into dictionary
+    # Convert data into dictionary. NOTE that I make it a list of dictionaries so that
+    # it's clear what the data represents by giving in key labels.
     most_active_station_data = \
         {'Station ID' : most_active_station.id, 
         'Station Name' : most_active_station.station, 
@@ -180,11 +190,8 @@ def temps_start_end(start, end):
     # Create our session (link) from Python to the DB
     session = Session(engine)
 
-    """ 1. Return a JSON list of the minimum temperature, the average temperature, 
-        and the max temperature for a given start or start-end range.
-        
-        2. When given the start and the end date, calculate the TMIN, TAVG, and TMAX 
-        for dates between the start and end date inclusive."""
+    """ Return a JSON list of the minimum temperature, the average temperature, 
+        and the max temperature for a given start-end range."""
 
     # Query most active station
     most_active_station = session.query(Stations.id, Stations.station).\
@@ -198,11 +205,12 @@ def temps_start_end(start, end):
             func.round(func.avg(Measurements.tobs), 1)).\
         filter(Measurements.station == Stations.station).\
         filter(Stations.id == most_active_station.id).\
-        filter(Measurements.date >= start, Measurements.date >= end).all()[0]
+        filter(Measurements.date >= start, Measurements.date <= end).all()[0]
     
     session.close()
 
-    # Convert data into dictionary
+    # Convert data into dictionary. NOTE that I make it a list of dictionaries so that
+    # it's clear what the data represents by giving in key labels.
     most_active_station_data = \
         {'Station ID' : most_active_station.id, 
         'Station Name' : most_active_station.station, 
