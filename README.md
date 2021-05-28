@@ -27,8 +27,8 @@ Analyze compensation data for over 300,000 employees:
 - Provide recommendations to the corporate compensation committee
 
 **API DOCUMENTATION**
-- Dowload the [Climate App API starter code](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/climate_app.py) and the Hawaii weather [sqlite database](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/hawaii.sqlite). 
-- Run the python app
+- Dowload the [Climate App API starter code](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/climate_app.py) and the Hawaii weather [sqlite database](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/hawaii.sqlite) into the same folder on your drive. 
+- Run the python app on your computer.
 - In your navigator enter this address: http://127.0.0.1:5000/
 - You will have a menu of five API route options:
 -   /api/v1.0/precipitation provides average daily rainfall for the past year. 
