@@ -18,7 +18,6 @@ This project provides analysis of Hawaii weather and makes available queries via
 * [*Additional Temperature Analysis 1*](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/temp_analysis_bonus_1_starter.ipynb) runs a t-test to compare June and December average temperatures. 
 * [*Additional Temperature Analysis 2*](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/temp_analysis_bonus_2_starter.ipynb) calculates and visualizes the minmum, average and maximum temperatures during a specified vacation date range with a [bar chart](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/average_trip_temperature.png) and an [area chart](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/temps_during_trip_date_range.png).
 
-
 **OBJECTIVE**
 
 Analyze compensation data for over 300,000 employees:
@@ -26,6 +25,17 @@ Analyze compensation data for over 300,000 employees:
 - Import data into a Jupyter Notebook
 - Create code to analyze and plot compensation data
 - Provide recommendations to the corporate compensation committee
+
+**API DOCUMENTATION**
+- Dowload the [Climate App API starter code](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/climate_app.py) and the Hawaii weather [sqlite database](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/hawaii.sqlite). 
+- Run the python app
+- In your navigator enter this address: http://127.0.0.1:5000/
+- You will have a menu of five API route options:
+-   /api/v1.0/precipitation provides average daily rainfall for the past year. 
+-   /api/v1.0/stations provides a list of the stations with their coordinates, elevation and measurement activity levels. 
+-   /api/v1.0/tobs provides average daily temperatures for the past year.
+-   /api/v1.0/<start> provides the minimum, average, and maximum temperature from a start date to present. Start dates should be in the following format: yyyy-mm-dd. Example: '/api/v1.0/2014-01-01'
+-   /api/v1.0/<start>/<end> provides the minimum, average, and maximum temperature from a start date to and end date. Start and end dates should be in the following format: yyyy-mm-dd. Example: '/api/v1.0/2014-01-01/2016-12-31'
 
 **DATA** 
 
@@ -53,13 +63,15 @@ Analyze compensation data for over 300,000 employees:
 
  <table style="width:100%">
   <tr valign="top">
-    <th><img height="300" alt="Average Daily Rainfall" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/average_rainfall.png"></th>
-    <th><img height="300" alt="Average Salaries by Position" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/temps_during_trip_date_range.png"></th>
+    <th><img height="200" alt="Average Daily Rainfall" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/average_rainfall.png"></th>
+    <th><img height="200" alt="Average Salaries by Position" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/temps_during_trip_date_range.png"></th>
+    <th><img height="200" alt="Average Historical Temperatures During Trip Dates" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/temps_during_trip_date_range.png"></th>
+       <th><img height="200" alt="Average Historical Temperatures During Trip Dates" src="https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/output_charts/temps_during_trip_date_range.png"></th>
   </tr>
 </table> 
 
 **CONCLUSIONS**
 
-- Hawaii has, undeniable, amazing weather. 
+- Hawaii has amazing weather. 
 =======
 
