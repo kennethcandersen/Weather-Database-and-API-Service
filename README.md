@@ -31,11 +31,11 @@ Analyze compensation data for over 300,000 employees:
 - Run the python app on your computer.
 - In your navigator enter this address: http://127.0.0.1:5000/
 - You will have a menu of five API route options:
--   /api/v1.0/precipitation provides average daily rainfall for the past year. 
--   /api/v1.0/stations provides a list of the stations with their coordinates, elevation and measurement activity levels. 
--   /api/v1.0/tobs provides average daily temperatures for the past year.
--   /api/v1.0/<start> provides the minimum, average, and maximum temperature from a start date to present. Start dates should be in the following format: yyyy-mm-dd. Example: '/api/v1.0/2014-01-01'
--   /api/v1.0/<start>/<end> provides the minimum, average, and maximum temperature from a start date to and end date. Start and end dates should be in the following format: yyyy-mm-dd. Example: '/api/v1.0/2014-01-01/2016-12-31'
+  - /api/v1.0/precipitation provides average daily rainfall for the past year. 
+  - /api/v1.0/stations provides a list of the stations with their coordinates, elevation and measurement activity levels. 
+  - /api/v1.0/tobs provides average daily temperatures for the past year.
+  - /api/v1.0/<start> provides the minimum, average, and maximum temperature from a start date to present. Start dates should be in the following format: yyyy-mm-dd. Example: '/api/v1.0/2014-01-01'
+  - /api/v1.0/<start>/<end> provides the minimum, average, and maximum temperature from a start date to and end date. Start and end dates should be in the following format: yyyy-mm-dd. Example: '/api/v1.0/2014-01-01/2016-12-31'
 
 **DATA** 
 
