@@ -39,7 +39,7 @@ Analyze compensation data for over 300,000 employees:
 
 **DATA** 
 
-[sqlite database](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/hawaii.sqlite) with data from 9 weather stations on the islands of Hawaii. The original sources is Menne, M.J., I. Durre, R.S. Vose, B.E. Gleason, and T.G. Houston, 2012: An overview of the Global Historical Climatology Network-Daily Database. Journal of Atmospheric and Oceanic Technology, 29, 897-910, [https://doi.org/10.1175/JTECH-D-11-00103.1](https://doi.org/10.1175/JTECH-D-11-00103.1).
+[Sqlite database](https://github.com/kennethcandersen/sqlalchemy-challenge/blob/main/hawaii.sqlite) with data from 9 weather stations on the islands of Hawaii. The original sources is Menne, M.J., I. Durre, R.S. Vose, B.E. Gleason, and T.G. Houston, 2012: An overview of the Global Historical Climatology Network-Daily Database. Journal of Atmospheric and Oceanic Technology, 29, 897-910, [https://doi.org/10.1175/JTECH-D-11-00103.1](https://doi.org/10.1175/JTECH-D-11-00103.1).
 
 
 **DEPENDENCIES**
@@ -74,7 +74,7 @@ Analyze compensation data for over 300,000 employees:
 
 **CONCLUSIONS**
 
-- Hawaii has amazing weather. 
+Hawaii has amazing weather. 
 
  =======
 
